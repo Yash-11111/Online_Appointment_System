@@ -9,9 +9,9 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("/api/auth", require("./routes/authRoutes"));
-app.use("/api/doctors", require("./routes/doctorRoutes"));
-app.use("/api/appointments", require("./routes/appointmentRoutes"));
+app.use("/api/auth", require("./routes/auth.route"));
+app.use("/api/doctors", require("./routes/doctor.route"));
+app.use("/api/appointments", require("./routes/appointment.route"));
 
 // DB connect
 mongoose.connect(process.env.MONGO_URI)
