@@ -1,7 +1,13 @@
 const express = require("express");
+
 const router = express.Router();
 
-const { getDoctors } = require("../controllers/doctorController");
+const doctorController = require("../controllers/doctorController");
 
-router.get("/", getDoctors);
+const fetchDoctors = doctorController.getDoctors;
+
+router.get("/", (req, res, next) => {
+    return fetchDoctors(req, res, next);
+});
+
 module.exports = router;
