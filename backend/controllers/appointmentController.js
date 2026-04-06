@@ -5,7 +5,7 @@ exports.bookAppointment = async (req, res) => {
   try {
     const { doctorId, date, slot } = req.body;
 
-    // 🔥 CHECK: prevent double booking
+    //  CHECK: prevent double booking
     const exists = await Appointment.findOne({ doctorId, date, slot });
 
     if (exists) {
@@ -14,7 +14,7 @@ exports.bookAppointment = async (req, res) => {
       });
     }
 
-    // ✅ Create appointment
+    //  Create appointment
     const appointment = new Appointment(req.body);
     await appointment.save();
 
