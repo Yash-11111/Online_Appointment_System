@@ -14,5 +14,4 @@ router.post("/login", (req, res, next) => {
 router.post("/register", (req, res, next) => {
     return registerUser(req, res, next);
 });
-
 module.exports = router;
